@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>JS Quiz</title>
+
+	<style type="text/css">
+      body{
+     	font-family: comic sans ms;
+     	color: red;
+     	text-align: center;
+      }
+     
+      #timer{
+      	font-size: 40px;
+      }
+
+      #a{
+		background-color:brown;
+		padding:8px;
+		border-radius:10px;
+	  }
+
+    </style>
+
+<button type="button" onclick="myFunction()">set background image</button>
+
+<script>
+    function myFunction() {
+		document.body.style.backgroundImage = "url('pl.jpeg')";
+	}
+</script>
+<br>
+<script>
+	function startTime() {
+		var today = new Date();
+		var h = today.getHours();
+		var m = today.getMinutes();
+		var s = today.getSeconds();
+		m = checkTime(m);
+		s = checkTime(s);
+		document.getElementById('txt').innerHTML = h + ":" + m + ":" + s;
+		var t = setTimeout(startTime, 500);
+	}
+	function checkTime(i) {
+		if (i < 10) {i = "0" + i}; 
+		return i;
+	}
+</script>
+<br>
+
+<body onload="startTime()">
+	<div id="txt"></div>
+</body>
+ 
+</head>
+<body>
+
+    <h2>AJEWOLE</h2>
+	<h3>Welcomes U To EPL 2018/19 Quiz.</h3>
+	<h3>Goodluck</h3>
+
+  <div id="container">
+
+	  <p id="timer"></p>
+	<div id="question"></div>
+	  <p id="option1"></p>
+	  <p id="option2"></p>
+	  <p id="option3"></p>
+	  <p id="option4"></p>
+	  <p id="submit"></p>
+
+  </div>
+
+</body>
+
+<script src="script.js"></script>
+</html>
